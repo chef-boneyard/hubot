@@ -63,7 +63,7 @@ name            | The name of the robot in chat. | String | hubot
 adapter         | The [Hubot adapter](https://github.com/github/hubot/wiki) to use. | String | campfire
 config          | Hash of values that will be converted into environment variables and passed to the Hubot process. | Hash | Hash.new
 dependencies    | Hash in form `dep_name => dep_version` that will be rendered into Hubot instance's `package.json`. A common dep to set in this attribute is non-Campfire adapters. | Hash | Hash.new
-hubot_scripts   | Scripts to enable from the [community colleciton of hubot scripts](https://github.com/github/hubot-scripts). | Array | Array.new
+hubot_scripts   | Scripts to enable from the [community collection of hubot scripts](https://github.com/github/hubot-scripts). | Array | Array.new
 
 # Development
 
