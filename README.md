@@ -22,7 +22,7 @@ The following platforms have been tested with this cookbook, meaning that the
 recipes and LWRPs run on these platforms without error:
 
 * Ubuntu 10.04, 11.04, 12.04, 12.10
-* CentOS 5, 6
+* CentOS 6
 
 ## Cookbooks
 
