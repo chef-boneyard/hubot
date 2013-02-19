@@ -18,8 +18,14 @@
 #
 
 include_recipe "git"
-include_recipe "nodejs::install_from_package"
 include_recipe "runit"
+
+case node['platform_family']
+when "debian"
+  include_recipe "nodejs::install_from_package"
+else
+  include_recipe "nodejs::install_from_source"
+end
 
 user node['hubot']['user'] do
   comment "Hubot User"
