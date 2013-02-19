@@ -65,6 +65,58 @@ config          | Hash of values that will be converted into environment variabl
 dependencies    | Hash in form `dep_name => dep_version` that will be rendered into Hubot instance's `package.json`. A common dep to set in this attribute is non-Campfire adapters. | Hash | Hash.new
 hubot_scripts   | Scripts to enable from the [community collection of hubot scripts](https://github.com/github/hubot-scripts). | Array | Array.new
 
+# Testing
+
+This cookbook ships with full support for the new alpha version of Opscode's
+`test-kitchen`. [Fletcher Nichol's](https://github.com/fnichol) excellent Jamie
+integration test runner was
+[recently merged into the test-kitchen codebase](http://lists.opscode.com/sympa/arc/chef-dev/2013-01/msg00038.html).
+This merge and all new feature work are now taking place in the
+[1.0 branch of test-kitchen](https://github.com/opscode/test-kitchen/tree/1.0).
+Even though many community members have been dogfooding the new `test-kitchen`
+codebase and it has proven quite stable, it should still be regarded as
+pre-release code and YMMV.
+
+Running integration with test-kitchen is easy. First we'll assume you have a
+sane cookbook development toolchain installed which includes:
+
+* Git
+* Ruby 1.9.x
+* Bundler
+* VirtualBox 4.x
+
+If you need help setting up this toolchain, take a read through the
+"[System Setup](http://vialstudios.com/guide-authoring-cookbooks.html#system_setup)"
+section of [Jamie Winsor's](https://github.com/reset) excellent cookbook
+authoring guide.
+
+First install all gem dependencies with Bundler:
+
+```shell
+$ bundle install --binstubs
+```
+
+Bundler will install all of the dependent RubyGems and guarantee that you have
+the right versions. Now it's time to get your test on:
+
+```shell
+$ bundle exec kitchen test
+```
+
+This command will do the following across every platform/version this cookbook
+supports:
+
+* Use Vagrant to provision a platform-specific VM.
+* Add a `recipe[hubot]` entry to the instance's run_list.
+* Converge the VM with `chef-solo`.
+
+By default, any VM that successfully converges will automaticallly be cleaned
+up. The full set of `kitchen` subcommands can be viewed by running:
+
+```shell
+$ bundle exec kitchen help
+```
+
 # Development
 
 * Source hosted at [GitHub][repo]
