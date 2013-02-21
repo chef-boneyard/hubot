@@ -5,9 +5,37 @@ Deploys and manages an instance of [GitHub's Hubot](http://hubot.github.com/).
 # Usage
 
 Include `recipe[hubot]` in your run_list and override the defaults you want
-changed. See [below](#-attributes) for more details. Hubot instances are
+changed. See [below](#attributes) for more details. Hubot instances are
 configured using environment variables passed to the Hubot process. These
 environment variables can be set using the `node['hubot']['config']` attribute.
+
+I hightly recommend integrating this cookbook into your own infrastruce using
+the
+[library/application cookbook pattern](http://devopsanywhere.blogspot.com/2012/11/how-to-write-reusable-chef-cookbooks.html).
+You would start by creating a `YOURCOMPANY-hubot` cookbook with a proper
+metadata depedency on the `hubot` (this) cookbook. A concrete example can be
+found [on this gist](https://gist.github.com/schisamo/46eafba27d43c4a1e026)
+which was created from bits of the internal `opscode-hubot` cookbook which we
+use to deploy, Paula Deen, Opscode's hubot instance.
+
+One important item to note is the use of the
+[remote_directory](http://docs.opscode.com/resource_remote_directory.html)
+resource to distribute our internal hubot scripts to the install:
+
+```ruby
+remote_directory "#{node['hubot']['install_dir']}/scripts" do
+  source "scripts"
+  files_backup 0
+  files_owner node['hubot']['user']
+  files_group node['hubot']['group']
+  files_mode 00644
+  owner node['hubot']['user']
+  group node['hubot']['group']
+  overwrite true
+  mode 00755
+  notifies :restart, "service[hubot]", :delayed
+end
+```
 
 # Requirements
 
