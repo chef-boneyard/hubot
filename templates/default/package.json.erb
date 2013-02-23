@@ -15,8 +15,8 @@
   },
 
   "dependencies": {
-    "hubot": ">= <%= @version %>",
-    "hubot-scripts": ">= <%= @scripts_version %>",
+    "hubot": "<%= @version %>",
+    "hubot-scripts": "<%= @scripts_version %>",
     <%- @dependencies.each_pair do |dep, version| -%>
     "<%= dep %>": "<%= version %>",
     <%- end -%>
