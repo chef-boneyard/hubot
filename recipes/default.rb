@@ -39,6 +39,7 @@ end
 directory node['hubot']['install_dir'] do
   owner node['hubot']['user']
   group node['hubot']['group']
+  recursive true
   mode  0755
 end
 
