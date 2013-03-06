@@ -22,10 +22,12 @@ include_recipe "runit"
 
 case node['platform_family']
 when "debian"
-  include_recipe "nodejs::install_from_package"
+  node.set['nodejs']['install_method'] = "package"
 else
-  include_recipe "nodejs::install_from_source"
+  node.set['nodejs']['install_method'] = "source"
 end
+
+include_recipe "nodejs"
 
 user node['hubot']['user'] do
   comment "Hubot User"
