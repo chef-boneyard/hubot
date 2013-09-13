@@ -22,6 +22,7 @@ default['hubot']['scripts_version'] = "2.4.1"
 default['hubot']['install_dir'] = "/opt/hubot"
 default['hubot']['user'] = "hubot"
 default['hubot']['group'] = "hubot"
+default['hubot']['private'] = true
 
 default['hubot']['name'] = "hubot"
 default['hubot']['adapter'] = "campfire"
