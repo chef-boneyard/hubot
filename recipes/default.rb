@@ -98,15 +98,7 @@ execute "npm install" do
   notifies :restart, "service[hubot]", :delayed
 end
 
-template "#{node['hubot']['install_dir']}/hubot.conf" do
-  source 'hubot.conf.erb'
-  owner node['hubot']['user']
-  group node['hubot']['group']
-  mode 0600
-  variables node['hubot'].to_hash
-  notifies :restart, "service[hubot]", :delayed
-end
-
 runit_service "hubot" do
   options node['hubot'].to_hash
+  env node['hubot']['config']
 end
