@@ -24,6 +24,8 @@ default['hubot']['user'] = "hubot"
 default['hubot']['group'] = "hubot"
 default['hubot']['private'] = true
 
+default['hubot']['repository'] = "https://github.com/github/hubot.git"
+
 default['hubot']['name'] = "hubot"
 default['hubot']['adapter'] = "campfire"
 default['hubot']['config'] = Hash.new
