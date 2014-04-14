@@ -12,11 +12,11 @@
 
   "repository" : {
     "type": "git",
-    "url":  "https://github.com/github/hubot.git"
+    "url":  "<%= @repository %>"
   },
 
   "dependencies": {
-    "hubot": "<%= @version %>",
+    "hubot": "git+<%= @repository %>#v<%= @version %>",
     "hubot-scripts": "<%= @scripts_version %>",
     <%- @dependencies.each_pair do |dep, version| -%>
     "<%= dep %>": "<%= version %>",
