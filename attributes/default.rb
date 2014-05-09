@@ -29,3 +29,4 @@ default['hubot']['adapter'] = "campfire"
 default['hubot']['config'] = Hash.new
 default['hubot']['dependencies'] = Hash.new
 default['hubot']['hubot_scripts'] = Array.new
+default['hubot']['external_scripts'] = Array.new
