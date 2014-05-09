@@ -78,11 +78,24 @@ template "#{node['hubot']['install_dir']}/package.json" do
 end
 
 template "#{node['hubot']['install_dir']}/hubot-scripts.json" do
-  source 'hubot-scripts.json.erb'
+  source 'scripts.json.erb'
   owner node['hubot']['user']
   group node['hubot']['group']
   mode 0644
-  variables node['hubot'].to_hash
+  variables ({
+    "scripts" => node['hubot']['hubot_scripts']
+  })
+  notifies :restart, "service[hubot]", :delayed
+end
+
+template "#{node['hubot']['install_dir']}/external-scripts.json" do
+  source 'scripts.json.erb'
+  owner node['hubot']['user']
+  group node['hubot']['group']
+  mode 0644
+  variables ({
+    "scripts" => node['hubot']['external_scripts']
+  })
   notifies :restart, "service[hubot]", :delayed
 end
 
