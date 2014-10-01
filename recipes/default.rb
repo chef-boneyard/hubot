@@ -50,7 +50,7 @@ checkout_location = ::File.join(Chef::Config[:file_cache_path], "hubot")
 git checkout_location do
   repository "#{node['hubot']['repository']}"
   #repository "https://github.com/github/hubot.git"
-  revision "v#{node['hubot']['version']}"
+  # revision "v#{node['hubot']['version']}"
   action :checkout
   notifies :run, "execute[build and install hubot]", :immediately
 end
