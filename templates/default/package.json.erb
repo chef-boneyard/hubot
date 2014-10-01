@@ -16,7 +16,7 @@
   },
 
   "dependencies": {
-    "hubot": "git+<%= @repository %>#v<%= @version %>",
+    "hubot": "git+<%= @repository %>",
     "hubot-scripts": "<%= @scripts_version %>",
     <%- @dependencies.each_pair do |dep, version| -%>
     "<%= dep %>": "<%= version %>",
