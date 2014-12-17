@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: hubot
-# Attributes:: default
+# Attributes:: supervisor
 #
 # Copyright (c) 2013, Seth Chisamore
 #
@@ -17,20 +17,10 @@
 # limitations under the License.
 #
 
-default['hubot']['version'] = "2.4.6"
-default['hubot']['scripts_version'] = "2.4.1"
-default['hubot']['install_dir'] = "/opt/hubot"
-default['hubot']['user'] = "hubot"
-default['hubot']['group'] = "hubot"
-default['hubot']['private'] = true
-
-default['hubot']['name'] = "hubot"
-default['hubot']['adapter'] = "campfire"
-default['hubot']['config'] = Hash.new
-default['hubot']['dependencies'] = Hash.new
-default['hubot']['hubot_scripts'] = Array.new
-
-# Choose daemonize program: 'runit' or 'supervisor'
-default['hubot']['daemon'] = 'runit'
-
-
+# Supervisor stuff
+default['hubot']['supervisor']['stdout_logfile'] = "/var/log/hubot.log"
+default['hubot']['supervisor']['stdout_logfile_maxbytes'] = "10MB"
+default['hubot']['supervisor']['stdout_logfile_backups'] = 10
+default['hubot']['supervisor']['stderr_logfile'] = "/var/log/hubot_error.log"
+default['hubot']['supervisor']['stderr_logfile_maxbytes'] = "10MB"
+default['hubot']['supervisor']['stderr_logfile_backups'] = 10
