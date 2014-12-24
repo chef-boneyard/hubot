@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-default['hubot']['version'] = '2.4.6'
-default['hubot']['scripts_version'] = '2.4.1'
-default['hubot']['install_dir'] = '/opt/hubot'
-default['hubot']['user'] = 'hubot'
-default['hubot']['group'] = 'hubot'
+default['hubot']['version'] = "2.11.0"
+default['hubot']['scripts_version'] = "2.5.16"
+default['hubot']['install_dir'] = "/opt/hubot"
+default['hubot']['user'] = "hubot"
+default['hubot']['group'] = "hubot"
 default['hubot']['private'] = true
 
 default['hubot']['name'] = 'hubot'
