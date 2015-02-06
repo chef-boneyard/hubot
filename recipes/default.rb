@@ -19,14 +19,6 @@
 
 include_recipe 'git'
 include_recipe 'runit'
-
-case node['platform_family']
-when 'debian'
-  node.set['nodejs']['install_method'] = 'package'
-else
-  node.set['nodejs']['install_method'] = 'source'
-end
-
 include_recipe 'nodejs'
 
 user node['hubot']['user'] do
