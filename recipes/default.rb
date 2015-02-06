@@ -75,7 +75,7 @@ template "#{node['hubot']['install_dir']}/hubot-scripts.json" do
   group node['hubot']['group']
   mode '0644'
   variables node['hubot'].to_hash
-  notifies :restart, 'service[hubot]', :delayed
+  notifies :restart, 'service[hubot]'
 end
 
 execute 'npm install' do
@@ -87,7 +87,7 @@ execute 'npm install' do
     'HOME' => node['hubot']['install_dir']
   )
   action :nothing
-  notifies :restart, 'service[hubot]', :delayed
+  notifies :restart, 'service[hubot]'
 end
 
 runit_service 'hubot' do
