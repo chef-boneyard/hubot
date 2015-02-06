@@ -34,7 +34,7 @@ directory node['hubot']['install_dir'] do
   owner node['hubot']['user']
   group node['hubot']['group']
   recursive true
-  mode 0755
+  mode '0755'
 end
 
 # https://github.com/github/hubot/archive/v2.4.6.zip
@@ -64,7 +64,7 @@ template "#{node['hubot']['install_dir']}/package.json" do
   source 'package.json.erb'
   owner node['hubot']['user']
   group node['hubot']['group']
-  mode 0644
+  mode '0644'
   variables node['hubot'].to_hash
   notifies :run, 'execute[npm install]', :immediately
 end
@@ -73,7 +73,7 @@ template "#{node['hubot']['install_dir']}/hubot-scripts.json" do
   source 'hubot-scripts.json.erb'
   owner node['hubot']['user']
   group node['hubot']['group']
-  mode 0644
+  mode '0644'
   variables node['hubot'].to_hash
   notifies :restart, 'service[hubot]', :delayed
 end
