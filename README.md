@@ -28,7 +28,7 @@ remote_directory "#{node['hubot']['install_dir']}/scripts" do
   files_backup 0
   files_owner node['hubot']['user']
   files_group node['hubot']['group']
-  files_mode 00644
+  files_mode '0644'
   owner node['hubot']['user']
   group node['hubot']['group']
   overwrite true
@@ -41,16 +41,15 @@ end
 
 ## Chef
 
-Tested on Chef 11 but newer and older version should work just fine. File an
-[issue][issues] if this isn't the case.
+Tested on Chef 11/12
 
 ## Platform
 
 The following platforms have been tested with this cookbook, meaning that the
 recipes and LWRPs run on these platforms without error:
 
-* Ubuntu 10.04, 11.04, 12.04, 12.10
-* CentOS 6
+* Ubuntu 10.04+
+* RHEL/Centos 6
 
 ## Cookbooks
 
