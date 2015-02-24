@@ -1,4 +1,4 @@
-## [1.0.2](https://github.com/schisamo-cookbooks/hubot/compare/1.0.1...1.0.2)
+## [1.0.2](https://github.com/tas50/hubot/compare/1.0.1...1.0.2)
 
 ### Bug Fixes
 
@@ -17,7 +17,7 @@
 * Download Ubuntu base boxes from cloud-images.ubuntu.com. Thanks
   [@jeremiahsnapp]!
 
-## [1.0.1](https://github.com/schisamo-cookbooks/hubot/compare/1.0.0...1.0.1)
+## [1.0.1](https://github.com/tas50/hubot/compare/1.0.0...1.0.1)
 
 ### Bug Fixes
 
@@ -33,7 +33,7 @@ Fedora/RHEL/CentOS as the packages are no longer maintained.
 ### Improvements
 
 * A CHANGELOG!
-* Pull request [#1](https://github.com/schisamo-cookbooks/hubot/pull/1): Fix typo in README. ([@streeter])
+* Pull request [#1](https://github.com/tas50/hubot/pull/1): Fix typo in README. ([@streeter])
 * Remove references to CentOS 5.5 support
 * Add proper supports fields to metadata
 
