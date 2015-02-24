@@ -32,7 +32,7 @@ remote_directory "#{node['hubot']['install_dir']}/scripts" do
   owner node['hubot']['user']
   group node['hubot']['group']
   overwrite true
-  mode 00755
+  mode '0755'
   notifies :restart, "service[hubot]", :delayed
 end
 ```
@@ -55,9 +55,9 @@ recipes and LWRPs run on these platforms without error:
 
 This cookbook depends on the following external cookbooks:
 
-* [nodejs](http://community.opscode.com/cookbooks/nodejs) (mdxp)
-* [git](http://community.opscode.com/cookbooks/git) (Opscode)
-* [runit](http://community.opscode.com/cookbooks/runit) (Opscode)
+* [nodejs](https://supermarket.chef.io/cookbooks/nodejs)
+* [git](https://supermarket.chef.io/cookbooks/git)
+* [runit](https://supermarket.chef.io/cookbooks/runit)
 
 # Recipes
 
