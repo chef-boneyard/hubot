@@ -155,9 +155,13 @@ topic branch for every separate feature/fix you make.
 
 # License and Author
 
-Author:: [Seth Chisamore][schisamo] (<schisamo@gmail.com>) [![endorse](http://api.coderwall.com/schisamo/endorsecount.png)](http://coderwall.com/schisamo)
+Author:: [Seth Chisamore][schisamo] (<schisamo@gmail.com>)
 
-Copyright (c) 2013, Seth Chisamore
+Author:: [Tim Smith][tas50] (<tsmith84@gmail.com>)
+
+Copyright (c) 2013-2015, Seth Chisamore
+
+Copyright (c) 2015, Tim Smith
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -171,6 +175,3 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-[schisamo]:      https://github.com/schisamo
-[repo]:          https://github.com/schisamo-cookbooks/hubot
-[issues]:        https://github.com/schisamo-cookbooks/hubot/issues
