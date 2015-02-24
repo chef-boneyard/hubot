@@ -1,3 +1,19 @@
+## [1.0.4](https://github.com/tas50/hubot/compare/1.0.3...1.0.4)
+Many thanks to Seth for creating this cookbook and for being kind enough to pass the cookbook maintenance onto me. I hope to keep things up to date for all the Hubot users out there.
+
+* Updated Gem dependencies to the latest releases of upstream projects
+* Removed Ubuntu 12.10 from test kitchen
+* Added a Rubocop config and resolved all rubocop warnings
+* Removed the use of Thor
+* Use strings for file modes to ensure that the leading 0 is respected
+* Don't set nodejs install attributes based on platform. Let users decide how to install NodeJS
+* Use https for the git checkout not GIT to work around strict firewalls
+* Defaulting package.json "private": true with a new attribute: default['hubot']['private']
+* Quote all config vars so that spaces don't cause kabooms
+* Use runit's env param so that environment variables can handle numeric values and values with spaces
+* Use standard OS baseboxes in kitchen.yml
+
+
 ## [1.0.2](https://github.com/tas50/hubot/compare/1.0.1...1.0.2)
 
 ### Bug Fixes
