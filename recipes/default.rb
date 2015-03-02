@@ -49,9 +49,8 @@ end
 execute 'build and install hubot' do
   command <<-EOH
 npm install
-bin/hubot -c #{node['hubot']['install_dir']}
 chown #{node['hubot']['user']}:#{node['hubot']['group']} -R #{node['hubot']['install_dir']}
-chmod 0755 #{node['hubot']['install_dir']}/bin/hubot
+chmod 0755 #{node['hubot']['install_dir']}/node_modules/.bin/hubot
   EOH
   cwd checkout_location
   environment(
