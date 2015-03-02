@@ -77,6 +77,15 @@ template "#{node['hubot']['install_dir']}/hubot-scripts.json" do
   notifies :restart, 'service[hubot]'
 end
 
+template "#{node['hubot']['install_dir']}/external-scripts.json" do
+  source 'external-scripts.json.erb'
+  owner node['hubot']['user']
+  group node['hubot']['group']
+  mode '0644'
+  variables node['hubot'].to_hash
+  notifies :restart, 'service[hubot]'
+end
+
 execute 'npm install' do
   cwd node['hubot']['install_dir']
   user node['hubot']['user']

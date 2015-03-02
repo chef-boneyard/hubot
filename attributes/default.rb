@@ -29,3 +29,4 @@ default['hubot']['adapter'] = 'campfire'
 default['hubot']['config'] = {}
 default['hubot']['dependencies'] = {}
 default['hubot']['hubot_scripts'] = []
+default['hubot']['hubot_external_scripts'] = []
