@@ -81,8 +81,8 @@ This cookbook depends on the following external cookbooks:
 
 Attribute       | Description |Type | Default
 ----------------|-------------|-----|--------
-version         | Hubot version to install. | String  | 2.4.6      |
-scripts_version | Version of [hubot-scripts](https://github.com/github/hubot-scripts) (community collection of hubot scripts) to install. | String | 2.4.1
+version         | Hubot version to install. | String  | 2.11.0      |
+scripts_version | Version of [hubot-scripts](https://github.com/github/hubot-scripts) (community collection of hubot scripts) to install. | String | 2.5.16
 install_dir     | Directory the Hubot instance will be installed to. | String | /opt/hubot
 user            | The user to install and run the Hubot instance under. | String | hubot
 group           | The group to install and run the Hubot instance under. | String | hubot
