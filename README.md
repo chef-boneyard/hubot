@@ -71,7 +71,7 @@ This cookbook depends on the following external cookbooks:
   [runit cookbook](http://community.opscode.com/cookbooks/runit).
 * Creates a user and group to install and run the Hubot instance under.
 * Installs the specified Hubot version from git.
-* Renders instance-specific `package.json`, `hubot-scripts.json`, and
+* Renders instance-specific `package.json`, `external-scripts.json`, `hubot-scripts.json`, and
  `hubot.conf` files.
 * Creates and enables a `hubot` runit service to run the Hubot instance under.
   The runit service reads the `hubot.conf` file and passes the contents onto
@@ -91,6 +91,7 @@ adapter         | The [Hubot adapter](https://github.com/github/hubot/blob/maste
 config          | Hash of values that will be converted into environment variables and passed to the Hubot process. | Hash | Hash.new
 dependencies    | Hash in form `dep_name => dep_version` that will be rendered into Hubot instance's `package.json`. A common dep to set in this attribute is non-Campfire adapters. | Hash | Hash.new
 hubot_scripts   | Scripts to enable from the [community collection of hubot scripts](https://github.com/github/hubot-scripts). | Array | Array.new
+external_scripts| External scripts to enable. | Array | Array.new
 
 # Testing
 
