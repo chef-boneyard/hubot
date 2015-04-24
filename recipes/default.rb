@@ -17,19 +17,19 @@
 # limitations under the License.
 #
 
-include_recipe "git"
+include_recipe 'git'
 
 case node['platform_family']
-when "debian"
-  node.set['nodejs']['install_method'] = "package"
+when 'debian'
+  node.set['nodejs']['install_method'] = 'package'
 else
-  node.set['nodejs']['install_method'] = "source"
+  node.set['nodejs']['install_method'] = 'source'
 end
 
-include_recipe "nodejs"
+include_recipe 'nodejs'
 
 user node['hubot']['user'] do
-  comment "Hubot User"
+  comment 'Hubot User'
   home node['hubot']['install_dir']
 end
 
@@ -41,28 +41,26 @@ directory node['hubot']['install_dir'] do
   owner node['hubot']['user']
   group node['hubot']['group']
   recursive true
-  mode  0755
+  mode '0755'
 end
 
 # https://github.com/github/hubot/archive/v2.4.6.zip
-checkout_location = ::File.join(Chef::Config[:file_cache_path], "hubot")
+checkout_location = ::File.join(Chef::Config[:file_cache_path], 'hubot')
 git checkout_location do
-  repository "https://github.com/github/hubot.git"
+  repository 'https://github.com/github/hubot.git'
   revision "v#{node['hubot']['version']}"
   action :checkout
-  notifies :run, "execute[build and install hubot]", :immediately
+  notifies :run, 'execute[build and install hubot]', :immediately
 end
 
-execute "build and install hubot" do
+execute 'build and install hubot' do
   command <<-EOH
 npm install
-bin/hubot -c #{node['hubot']['install_dir']}
 chown #{node['hubot']['user']}:#{node['hubot']['group']} -R #{node['hubot']['install_dir']}
-chmod 0755 #{node['hubot']['install_dir']}/bin/hubot
   EOH
   cwd checkout_location
   environment(
-    "PATH" => "#{checkout_location}/node_modules/.bin:#{ENV['PATH']}"
+    'PATH' => "#{checkout_location}/node_modules/.bin:#{ENV['PATH']}"
   )
   action :nothing
 end
@@ -71,9 +69,9 @@ template "#{node['hubot']['install_dir']}/package.json" do
   source 'package.json.erb'
   owner node['hubot']['user']
   group node['hubot']['group']
-  mode 0644
+  mode '0644'
   variables node['hubot'].to_hash
-  notifies :run, "execute[npm install]", :immediately
+  notifies :run, 'execute[npm install]', :immediately
 end
 
 # Get the daemonizing server
@@ -83,18 +81,27 @@ template "#{node['hubot']['install_dir']}/hubot-scripts.json" do
   source 'hubot-scripts.json.erb'
   owner node['hubot']['user']
   group node['hubot']['group']
-  mode 0644
+  mode '0644'
+  variables node['hubot'].to_hash
+  notifies :restart, 'service[hubot]'
+end
+
+template "#{node['hubot']['install_dir']}/external-scripts.json" do
+  source 'external-scripts.json.erb'
+  owner node['hubot']['user']
+  group node['hubot']['group']
+  mode '0644'
   variables node['hubot'].to_hash
   notifies :restart, "#{daemon}_service[hubot]", :delayed
 end
 
-execute "npm install" do
+execute 'npm install' do
   cwd node['hubot']['install_dir']
   user node['hubot']['user']
   group node['hubot']['group']
   environment(
-    "USER" => node['hubot']['user'],
-    "HOME" => node['hubot']['install_dir']
+    'USER' => node['hubot']['user'],
+    'HOME' => node['hubot']['install_dir']
   )
   action :nothing
   notifies :restart, "#{daemon}_service[hubot]", :delayed

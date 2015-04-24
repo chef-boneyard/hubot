@@ -17,20 +17,26 @@
 # limitations under the License.
 #
 
-default['hubot']['version'] = "2.4.6"
-default['hubot']['scripts_version'] = "2.4.1"
-default['hubot']['install_dir'] = "/opt/hubot"
-default['hubot']['user'] = "hubot"
-default['hubot']['group'] = "hubot"
+default['hubot']['version'] = '2.12.0'
+default['hubot']['scripts_version'] = '2.5.16'
+default['hubot']['install_dir'] = '/opt/hubot'
+default['hubot']['user'] = 'hubot'
+default['hubot']['group'] = 'hubot'
 default['hubot']['private'] = true
 
-default['hubot']['name'] = "hubot"
-default['hubot']['adapter'] = "campfire"
-default['hubot']['config'] = Hash.new
-default['hubot']['dependencies'] = Hash.new
-default['hubot']['hubot_scripts'] = Array.new
+default['hubot']['name'] = 'hubot'
+default['hubot']['adapter'] = 'campfire'
+default['hubot']['config'] = {}
+default['hubot']['dependencies'] = {}
+default['hubot']['hubot_scripts'] = []
 
 # Choose daemonize program: 'runit' or 'supervisor'
 default['hubot']['daemon'] = 'runit'
 
-
+# Supervisor stuff
+default['hubot']['supervisor']['stdout_logfile'] = '/var/log/hubot.log'
+default['hubot']['supervisor']['stdout_logfile_maxbytes'] = '10MB'
+default['hubot']['supervisor']['stdout_logfile_backups'] = 10
+default['hubot']['supervisor']['stderr_logfile'] = '/var/log/hubot_error.log'
+default['hubot']['supervisor']['stderr_logfile_maxbytes'] = '10MB'
+default['hubot']['supervisor']['stderr_logfile_backups'] = 10
