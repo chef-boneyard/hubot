@@ -1,4 +1,6 @@
 # hubot cookbook
+================
+[![Build Status](https://travis-ci.org/tas50/hubot.svg)](https://travis-ci.org/tas50/hubot)
 
 Deploys and manages an instance of [GitHub's Hubot](http://hubot.github.com/).
 
