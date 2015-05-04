@@ -1,4 +1,4 @@
-# hubot cookbook
+hubot cookbook
 ================
 [![Build Status](https://travis-ci.org/tas50/hubot.svg)](https://travis-ci.org/tas50/hubot)
 
