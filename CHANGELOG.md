@@ -1,4 +1,4 @@
-## [1.0.6] -- Unreleased ! --
+## [1.0.6] (https://github.com/tas50/hubot/compare/1.0.5...1.0.6)
 * Allowing runit to use default log template (logging into /var/log/hubot)
 * Rubocop & Foocritic compliance
 * Chef & npm dependencies updated
@@ -6,6 +6,11 @@
 * Allowing to choose Hubot git source repo ('v' is still appended in the version tag)
 * Using nodejs_npm LWRP (from nodejs cookbook) instead of execute resources
 * Adding supervisor init system capability (runit is still the default one)
+* No longer using --create for new versions of Hubot
+* Updated base dependencies for the latest Hubot releases
+* Added a new attribute for managing external scripts file
+* Remove the chmod of the hubot bin file
+* Fixes to the Readme to properly document attributes and requirements
 
 ## [1.0.4](https://github.com/tas50/hubot/compare/1.0.3...1.0.4)
 Many thanks to Seth for creating this cookbook and for being kind enough to pass the cookbook maintenance onto me. I hope to keep things up to date for all the Hubot users out there.

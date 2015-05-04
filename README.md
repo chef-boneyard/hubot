@@ -60,6 +60,7 @@ This cookbook depends on the following external cookbooks:
 * [nodejs](https://supermarket.chef.io/cookbooks/nodejs)
 * [git](https://supermarket.chef.io/cookbooks/git)
 * [runit](https://supermarket.chef.io/cookbooks/runit)
+* [supervisor](https://supermarket.chef.io/cookbooks/supervisor)
 
 # Recipes
 
