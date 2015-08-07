@@ -12,10 +12,10 @@ platforms:
 - name: ubuntu-12.04
   run_list:
   - recipe[apt]
-- name: ubuntu-10.04
+- name: centos-6.6
   run_list:
-  - recipe[apt]
-- name: centos-6.3
+  - recipe[yum::epel]
+- name: centos-7.1
   run_list:
   - recipe[yum::epel]
 suites:
