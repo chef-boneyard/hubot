@@ -14,10 +14,10 @@ platforms:
   - recipe[apt]
 - name: centos-6.6
   run_list:
-  - recipe[yum::epel]
+  - recipe[yum-epel]
 - name: centos-7.1
   run_list:
-  - recipe[yum::epel]
+  - recipe[yum-epel]
 suites:
 - name: default
   run_list:
