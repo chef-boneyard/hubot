@@ -1,3 +1,7 @@
+hubot Cookbook CHANGELOG
+========================
+This file is used to list changes made in each version of the hubot cookbook.
+
 ## [1.0.6] (https://github.com/tas50/hubot/compare/1.0.5...1.0.6)
 * Allowing runit to use default log template (logging into /var/log/hubot)
 * Rubocop & Foocritic compliance
