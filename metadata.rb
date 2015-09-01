@@ -14,3 +14,7 @@ depends 'git'
 depends 'nodejs'
 depends 'runit'
 depends 'supervisor'
+
+source_url 'https://github.com/tas50/hubot' if respond_to?(:source_url)
+issues_url 'https://github.com/tas50/hubot/issues' if respond_to?(:source_url)
+
