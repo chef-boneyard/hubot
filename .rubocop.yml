@@ -1,3 +1,7 @@
+AllCops:
+  Exclude:
+    - vendor/**/*
+
 AlignParameters:
   Enabled: false
 CyclomaticComplexity:

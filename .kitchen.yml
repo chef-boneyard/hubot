@@ -5,6 +5,9 @@ driver:
 provisioner:
   name: chef_zero
 
+driver_config:
+  require_chef_omnibus: true
+
 platforms:
 - name: ubuntu-14.04
   run_list:
