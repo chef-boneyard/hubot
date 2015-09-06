@@ -18,7 +18,7 @@
 #
 
 default['hubot']['git_source'] = 'https://github.com/github/hubot.git'
-default['hubot']['version'] = '2.14.0'
+default['hubot']['version'] = '2.16.0'
 default['hubot']['scripts_version'] = '2.5.16'
 default['hubot']['install_dir'] = '/opt/hubot'
 default['hubot']['user'] = 'hubot'
