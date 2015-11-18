@@ -3,27 +3,6 @@
 
 Deploys and manages an instance of [GitHub's Hubot](https://hubot.github.com/).
 
-# Usage
-Include `recipe[hubot]` in your run_list and override the defaults you want changed. See [below](#attributes) for more details. Hubot instances are configured using environment variables passed to the Hubot process. These environment variables can be set using the `node['hubot']['config']` attribute.
-
-I highly recommend integrating this cookbook into your own infrastructure using the [library/application cookbook pattern](http://devopsanywhere.blogspot.com/2012/11/how-to-write-reusable-chef-cookbooks.html). You would start by creating a `YOURCOMPANY-hubot` cookbook with a proper metadata dependency on the `hubot` (this) cookbook. A concrete example can be found [on this gist](https://gist.github.com/schisamo/46eafba27d43c4a1e026) which was created from bits of the internal `opscode-hubot` cookbook which we use to deploy, Paula Deen, Chef's hubot instance.
-
-One important item to note is the use of the [remote_directory](http://docs.opscode.com/resource_remote_directory.html) resource to distribute our internal hubot scripts to the install:
-
-```ruby
-remote_directory "#{node['hubot']['install_dir']}/scripts" do
-  source "scripts"
-  files_backup 0
-  files_owner node['hubot']['user']
-  files_group node['hubot']['group']
-  files_mode '0644'
-  owner node['hubot']['user']
-  group node['hubot']['group']
-  overwrite true
-  mode '0755'
-  notifies :restart, "service[hubot]", :delayed
-end
-```
 
 ## Requirements
 ### Platforms
@@ -70,6 +49,29 @@ config           | Hash of values that will be converted into environment variab
 dependencies     | Hash in form `dep_name => dep_version` that will be rendered into Hubot instance's `package.json`. A common dep to set in this attribute is non-Campfire adapters. | Hash   | Hash.new
 hubot_scripts    | Scripts to enable from the [community collection of hubot scripts](https://github.com/github/hubot-scripts).                                                       | Array  | Array.new
 external_scripts | External scripts to enable.                                                                                                                                        | Array  | Array.new
+
+
+## Usage
+Include `recipe[hubot]` in your run_list and override the defaults you want changed. See [below](#attributes) for more details. Hubot instances are configured using environment variables passed to the Hubot process. These environment variables can be set using the `node['hubot']['config']` attribute.
+
+I highly recommend integrating this cookbook into your own infrastructure using the [library/application cookbook pattern](http://devopsanywhere.blogspot.com/2012/11/how-to-write-reusable-chef-cookbooks.html). You would start by creating a `YOURCOMPANY-hubot` cookbook with a proper metadata dependency on the `hubot` (this) cookbook. A concrete example can be found [on this gist](https://gist.github.com/schisamo/46eafba27d43c4a1e026) which was created from bits of the internal `opscode-hubot` cookbook which we use to deploy, Paula Deen, Chef's hubot instance.
+
+One important item to note is the use of the [remote_directory](http://docs.opscode.com/resource_remote_directory.html) resource to distribute our internal hubot scripts to the install:
+
+```ruby
+remote_directory "#{node['hubot']['install_dir']}/scripts" do
+  source "scripts"
+  files_backup 0
+  files_owner node['hubot']['user']
+  files_group node['hubot']['group']
+  files_mode '0644'
+  owner node['hubot']['user']
+  group node['hubot']['group']
+  overwrite true
+  mode '0755'
+  notifies :restart, "service[hubot]", :delayed
+end
+```
 
 ## License & Authors
 **Author:** [Seth Chisamore][schisamo] ([schisamo@gmail.com](mailto:schisamo@gmail.com))
