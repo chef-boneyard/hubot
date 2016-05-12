@@ -1,5 +1,5 @@
 # hubot cookbook
-[![Build Status](https://travis-ci.org/tas50/hubot.svg)](https://travis-ci.org/tas50/hubot) [![Cookbook Version](https://img.shields.io/cookbook/v/hubot.svg)](https://supermarket.chef.io/cookbooks/hubot)
+[![Build Status](https://travis-ci.org/chef-cookbooks/hubot.svg)](https://travis-ci.org/chef-cookbooks/hubot) [![Cookbook Version](https://img.shields.io/cookbook/v/hubot.svg)](https://supermarket.chef.io/cookbooks/hubot)
 
 Deploys and manages an instance of [GitHub's Hubot](https://hubot.github.com/).
 
@@ -76,12 +76,12 @@ end
 ## License & Authors
 **Author:** [Seth Chisamore][schisamo] ([schisamo@gmail.com](mailto:schisamo@gmail.com))
 
-**Author:** [Tim Smith][tas50] ([tsmith84@gmail.com](mailto:tsmith84@gmail.com))
+**Author:** [Tim Smith][tas50] ([tsmith@chef.io](mailto:tsmith@chef.io))
 
 **Copyright:** 2013-2015, Seth Chisamore
 
 **Copyright:** 2015, Tim Smith
-
+**Copyright:** 2016, Chef Software, Inc
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
