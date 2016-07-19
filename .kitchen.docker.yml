@@ -95,11 +95,4 @@ platforms:
 suites:
 - name: default
   run_list:
-  - recipe[hubot]
-  attributes: {}
-- name: supervisor
-  run_list:
-  - recipe[hubot]
-  attributes:
-    hubot:
-      daemon: supervisor
+  - recipe[test]

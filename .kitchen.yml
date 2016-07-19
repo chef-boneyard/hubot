@@ -5,6 +5,7 @@ provisioner:
   name: chef_zero
 
 platforms:
+  - name: centos-5.11
   - name: centos-6.7
   - name: centos-7.2
   - name: debian-7.10
@@ -13,6 +14,7 @@ platforms:
     run_list: apt::default
   - name: fedora-23
     run_list: yum::dnf_yum_compat
+  - name: opensuse-13.2
   - name: ubuntu-12.04
     run_list: apt::default
   - name: ubuntu-14.04
@@ -23,11 +25,4 @@ platforms:
 suites:
 - name: default
   run_list:
-  - recipe[hubot]
-  attributes: {}
-- name: supervisor
-  run_list:
-  - recipe[hubot]
-  attributes:
-    hubot:
-      daemon: supervisor
+  - recipe[test]

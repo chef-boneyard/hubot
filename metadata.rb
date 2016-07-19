@@ -4,16 +4,17 @@ maintainer_email 'cookbooks@chef.io'
 license          'Apache 2.0'
 description      "Deploys and manages an instance of Github's Hubot."
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '1.0.7'
+version          '2.0.0'
 
-supports 'ubuntu', '>= 12.04'
-supports 'centos', '>= 6.0'
-supports 'redhat', '>= 6.0'
+depends 'compat_resource', '>= 12.10'
 
-depends 'git'
+%w(ubuntu debian redhat centos suse opensuse opensuseleap scientific oracle amazon zlinux).each do |os|
+  supports os
+end
+
 depends 'nodejs'
-depends 'runit'
-depends 'supervisor'
 
-source_url 'https://github.com/chef-cookbooks/hubot' if respond_to?(:source_url)
-issues_url 'https://github.com/chef-cookbooks/hubot/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/chef-cookbooks/hubot'
+issues_url 'https://github.com/chef-cookbooks/hubot/issues'
+
+chef_version '>= 12.0' if respond_to?(:chef_version)
