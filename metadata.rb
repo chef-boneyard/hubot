@@ -16,5 +16,4 @@ depends 'nodejs'
 
 source_url 'https://github.com/chef-cookbooks/hubot'
 issues_url 'https://github.com/chef-cookbooks/hubot/issues'
-
-chef_version '>= 12.0' if respond_to?(:chef_version)
+chef_version '>= 12.1'

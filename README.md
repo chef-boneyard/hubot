@@ -15,7 +15,7 @@ Deploys and manages an instance of [GitHub's Hubot](https://hubot.github.com/).
 
 ### Chef
 
-- Chef 12+
+- Chef 12.1+
 
 ### Cookbooks
 
