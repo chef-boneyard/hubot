@@ -1,8 +1,8 @@
 property :instance_name, String, name_property: true
 property :version, String, default: '2.19.0'
-property :install_path, kind_of: String, default: lazy { |r| "/opt/hubot_#{r.instance_name}" }
-property :hubot_user, kind_of: String, default: lazy { |r| "hubot_#{r.instance_name}" }
-property :hubot_group, kind_of: String, default: lazy { |r| "hubot_#{r.instance_name}" }
+property :install_path, String, default: lazy { |r| "/opt/hubot_#{r.instance_name}" }
+property :hubot_user, String, default: lazy { |r| "hubot_#{r.instance_name}" }
+property :hubot_group, String, default: lazy { |r| "hubot_#{r.instance_name}" }
 
 action_class do
 end

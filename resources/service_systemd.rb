@@ -20,12 +20,12 @@ end
 
 property :instance_name, String, name_property: true
 property :install_path, String
-property :hubot_user, kind_of: String, default: lazy { |r| "hubot_#{r.instance_name}" }
-property :hubot_group, kind_of: String, default: lazy { |r| "hubot_#{r.instance_name}" }
+property :hubot_user, String, default: lazy { |r| "hubot_#{r.instance_name}" }
+property :hubot_group, String, default: lazy { |r| "hubot_#{r.instance_name}" }
 property :env_vars, Array, default: [
   { 'CATALINA_PID' => '$CATALINA_BASE/bin/hubot.pid' }
 ]
-property :sensitive, kind_of: [TrueClass, FalseClass], default: false
+property :sensitive, [TrueClass, FalseClass], default: false
 
 action :start do
   create_init
