@@ -20,6 +20,7 @@ Deploys and manages an instance of [GitHub's Hubot](https://hubot.github.com/).
 ### Cookbooks
 
 - [nodejs](https://supermarket.chef.io/cookbooks/nodejs)
+- [compat_resource](https://supermarket.chef.io/cookbooks/compat_resource)
 
 ## Recipes
 
