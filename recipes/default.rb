@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: hubot
+# Cookbook:: hubot
 # Recipe:: default
 #
-# Copyright (c) 2013, Seth Chisamore
+# Copyright:: 2013-2016, Seth Chisamore
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
