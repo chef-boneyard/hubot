@@ -19,11 +19,11 @@
 
 include_recipe 'git'
 
-node.set['nodejs']['install_method'] = case node['platform_family']
-                                       when 'debian'
-                                         'package'
-                                       else
-                                         'source'
+node.normal['nodejs']['install_method'] = case node['platform_family']
+                                          when 'debian'
+                                            'package'
+                                          else
+                                            'source'
                                        end
 
 include_recipe 'nodejs'
