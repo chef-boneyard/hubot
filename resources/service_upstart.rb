@@ -10,7 +10,7 @@ property :install_path, String
 property :hubot_user, String, default: lazy { |r| "hubot_#{r.instance_name}" }
 property :hubot_group, String, default: lazy { |r| "hubot_#{r.instance_name}" }
 property :env_vars, Array, default: [
-  { 'CATALINA_PID' => '$CATALINA_BASE/bin/hubot.pid' }
+  { 'CATALINA_PID' => '$CATALINA_BASE/bin/hubot.pid' },
 ]
 property :sensitive, [TrueClass, FalseClass], default: false
 
