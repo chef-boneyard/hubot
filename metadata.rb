@@ -11,8 +11,7 @@ version          '2.0.0'
 end
 
 depends 'nodejs'
-depends 'compat_resource', '>= 12.16.3'
 
 source_url 'https://github.com/chef-cookbooks/hubot'
 issues_url 'https://github.com/chef-cookbooks/hubot/issues'
-chef_version '>= 12.1'
+chef_version '>= 12.5'
