@@ -1,25 +1,31 @@
 # hubot cookbook
+
 [![Build Status](https://travis-ci.org/chef-cookbooks/hubot.svg)](https://travis-ci.org/chef-cookbooks/hubot) [![Cookbook Version](https://img.shields.io/cookbook/v/hubot.svg)](https://supermarket.chef.io/cookbooks/hubot)
 
 Deploys and manages an instance of [GitHub's Hubot](https://hubot.github.com/).
 
-
 ## Requirements
+
 ### Platforms
+
 - Debian/Ubuntu
 - RHEL/CentOS/Scientific/Amazon/Oracle
 
 ### Chef
-- Chef 11+
+
+- Chef 12.1+
 
 ### Cookbooks
+
 - [nodejs](https://supermarket.chef.io/cookbooks/nodejs)
 - [git](https://supermarket.chef.io/cookbooks/git)
 - [runit](https://supermarket.chef.io/cookbooks/runit)
 - [supervisor](https://supermarket.chef.io/cookbooks/supervisor)
 
 ## Recipes
+
 ### default
+
 - Ensures that Node.js is installed and available using the
 - [nodejs cookbook](http://community.opscode.com/cookbooks/nodejs).
 - Ensures git is installed and available using the
@@ -50,8 +56,8 @@ dependencies     | Hash in form `dep_name => dep_version` that will be rendered 
 hubot_scripts    | Scripts to enable from the [community collection of hubot scripts](https://github.com/github/hubot-scripts).                                                       | Array  | Array.new
 external_scripts | External scripts to enable.                                                                                                                                        | Array  | Array.new
 
-
 ## Usage
+
 Include `recipe[hubot]` in your run_list and override the defaults you want changed. See [below](#attributes) for more details. Hubot instances are configured using environment variables passed to the Hubot process. These environment variables can be set using the `node['hubot']['config']` attribute.
 
 I highly recommend integrating this cookbook into your own infrastructure using the [library/application cookbook pattern](http://devopsanywhere.blogspot.com/2012/11/how-to-write-reusable-chef-cookbooks.html). You would start by creating a `YOURCOMPANY-hubot` cookbook with a proper metadata dependency on the `hubot` (this) cookbook. A concrete example can be found [on this gist](https://gist.github.com/schisamo/46eafba27d43c4a1e026) which was created from bits of the internal `opscode-hubot` cookbook which we use to deploy, Paula Deen, Chef's hubot instance.
@@ -74,14 +80,15 @@ end
 ```
 
 ## License & Authors
+
 **Author:** [Seth Chisamore][schisamo] ([schisamo@gmail.com](mailto:schisamo@gmail.com))
 
 **Author:** [Tim Smith][tas50] ([tsmith@chef.io](mailto:tsmith@chef.io))
 
 **Copyright:** 2013-2015, Seth Chisamore
 
-**Copyright:** 2015, Tim Smith
-**Copyright:** 2016, Chef Software, Inc
+**Copyright:** 2015, Tim Smith **Copyright:** 2016, Chef Software, Inc
+
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

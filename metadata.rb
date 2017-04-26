@@ -15,5 +15,6 @@ depends 'nodejs'
 depends 'runit'
 depends 'supervisor'
 
-source_url 'https://github.com/chef-cookbooks/hubot' if respond_to?(:source_url)
-issues_url 'https://github.com/chef-cookbooks/hubot/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/chef-cookbooks/hubot'
+issues_url 'https://github.com/chef-cookbooks/hubot/issues'
+chef_version '>= 12.1' if respond_to?(:chef_version)
