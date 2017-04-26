@@ -76,7 +76,7 @@ template "#{node['hubot']['install_dir']}/hubot-scripts.json" do
   group node['hubot']['group']
   mode '0644'
   variables node['hubot'].to_hash
-  notifies :restart, "#{daemon}_service[hubot]", :delayed
+  notifies :restart, "runit_service[hubot]", :delayed
 end
 
 template "#{node['hubot']['install_dir']}/external-scripts.json" do
@@ -85,7 +85,7 @@ template "#{node['hubot']['install_dir']}/external-scripts.json" do
   group node['hubot']['group']
   mode '0644'
   variables node['hubot'].to_hash
-  notifies :restart, "#{daemon}_service[hubot]", :delayed
+  notifies :restart, "runit_service[hubot]", :delayed
 end
 
 nodejs_npm 'install' do
@@ -94,7 +94,7 @@ nodejs_npm 'install' do
   user node['hubot']['user']
   group node['hubot']['group']
   action :nothing
-  notifies :restart, "#{daemon}_service[hubot]", :delayed
+  notifies :restart, "runit_service[hubot]", :delayed
 end
 
 include_recipe 'runit'
