@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of the hubot cookbook.
 
+## 2.0.0 (2017-04-26)
+
+- Switch to delivery local for testing
+- Remove support for the Supervisor init system
+
 ## 1.1.0 (2017-04-26)
 
 - Require Chef 12.1+
