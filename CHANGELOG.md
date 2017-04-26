@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of the hubot cookbook.
 
+## 2.0.1 (2017-04-26)
+
+- Rename and update the dokken config
+- Fix the notifications in the default recipe
+
 ## 2.0.0 (2017-04-26)
 
 - Switch to delivery local for testing
