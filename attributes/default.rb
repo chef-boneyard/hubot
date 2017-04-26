@@ -32,16 +32,5 @@ default['hubot']['dependencies'] = {}
 default['hubot']['hubot_scripts'] = []
 default['hubot']['external_scripts'] = []
 
-# Choose daemonize program: 'runit' or 'supervisor'
-default['hubot']['daemon'] = 'runit'
-
 # runit stuff
 default['hubot']['runit']['default_logger'] = false # Use true to log to /var/log/hubot
-
-# supervisor stuff
-default['hubot']['supervisor']['stdout_logfile'] = '/var/log/hubot.log'
-default['hubot']['supervisor']['stdout_logfile_maxbytes'] = '10MB'
-default['hubot']['supervisor']['stdout_logfile_backups'] = 10
-default['hubot']['supervisor']['stderr_logfile'] = '/var/log/hubot_error.log'
-default['hubot']['supervisor']['stderr_logfile_maxbytes'] = '10MB'
-default['hubot']['supervisor']['stderr_logfile_backups'] = 10

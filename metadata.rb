@@ -13,7 +13,6 @@ supports 'redhat', '>= 6.0'
 depends 'git'
 depends 'nodejs'
 depends 'runit'
-depends 'supervisor'
 
 source_url 'https://github.com/chef-cookbooks/hubot'
 issues_url 'https://github.com/chef-cookbooks/hubot/issues'

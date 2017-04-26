@@ -97,4 +97,10 @@ nodejs_npm 'install' do
   notifies :restart, "#{daemon}_service[hubot]", :delayed
 end
 
-include_recipe "hubot::_#{daemon}"
+include_recipe 'runit'
+
+runit_service 'hubot' do
+  options node['hubot'].to_hash
+  env node['hubot']['config']
+  default_logger node['hubot']['runit']['default_logger']
+end
